@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <% if (typeof successMessage !== 'undefined') { %>
+        <script>
+            window.onload = function() {
+                // Display the success message
+                alert("<%= successMessage %>");
+                // Redirect to the login page after clicking "OK" on the alert
+                window.location.href = "/"; // Change this to the login page URL
+            };
+        </script>
+    <% } %>
+    <div class="container">
+        <div class="box1">
+            <h1>DROP OUT ANALYSIS</h1>
+            <div id="logoBox">
+                <img src="https://png.pngtree.com/png-vector/20190304/ourlarge/pngtree-education-logo-vector-image-png-image_728262.jpg" alt="">
+            </div>
+            <div class="contact">
+                <p>for any query contact here : 984XXXX4</p>
+            </div>
+        </div>
+        <div class="box2">
+            <form action="/register" method="post">
+                <div class="head">
+                    <h1 id="head1">REGISTER</h1>
+                    <select name="person" id="person" required>
+                        <option value="" disabled selected>Select User Type</option>
+                        <option value="teacher">Teacher</option>
+                        <option value="student">Student</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                    </div>
+                <input type="email" placeholder="Enter your Email" name="email" required>
+                <input type="password" placeholder="Enter your Password" name="password" required>
+                <div class="right">
+                    <button id="button">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        setTimeout(function() {
+            location.reload();
+        }, 300000); // Refresh every 5 minutes (300000 milliseconds)
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>student home</title>
+    <link rel="stylesheet" href="/home.css">
+</head>
+
+<body>
+    <form action="/home" method="post"> <!-- Added form tag -->
+                           
+        <div class="container">
+            <div class="container1">
+                <div class="navbar">
+                    <nav>
+                        <ul id="list1">
+                            <li id="list2">
+                                <a href="#student">STUDENT</a>
+                            </li>
+                           
+                        </ul>
+                        <div id="menubar">
+                            <img id="dropdownButton" src="https://i.pinimg.com/originals/26/9d/d1/269dd16fa1f5ff51accd09e7e1602267.png" height="30px" width="30px" alt="">
+                            <div id="dropdownContent">
+                                <!-- Dropdown content goes here -->
+                                <a href="#">Link 1</a>
+                                <a href="#">Link 2</a>
+                                <a href="#">Link 3</a>
+                            </div>
+                        </div>
+
+                    </nav>
+                </div>
+            </div>
+        
+        
+            <div class="container2">
+        
+                    
+        
+                <div class="box1">
+                    <a href="https://www.buddy4study.com/scholarships?ref=article_header" class="a2" target="_blank">
+                        <img src="https://cdn-icons-png.flaticon.com/512/10686/10686013.png" alt="" id="addS">
+                    </a>
+                    <h1>Financial Aid</h1>
+                </div>
+                <div class="box1">
+                    <a href="https://offeo.com/learn/best-educational-youtube-channels" class="a2" target="_blank">
+                        <img src="https://freepngimg.com/thumb/education/12-2-education-png-image.png" alt="" id="addS" >
+                    </a>
+                    <h1>Educational Resources</h1>
+                </div>
+                <div class="box1">
+                    <a href="https://peoplehouse.org/?gad_source=1&gclid=Cj0KCQjwn7mwBhCiARIsAGoxjaLxOkPEQqqj2sMMgZ2x0DuS39xNUeidZl3BvXohwyFPhErja-qhjzYaAnrnEALw_wcB" class="a2" target="_blank">
+                        <img src="https://cdn4.iconfinder.com/data/icons/psychology-dazzle-vol-1/256/Counselor_Female-1024.png" alt="" id="addS">
+                    </a>
+                    <h1>Counselling</h1>
+                </div>
+            </div>
+        </div>
+        
+    </form> <!-- Closed form tag -->
+</body>
+<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var dropdownButton = document.getElementById("dropdownButton");
+            var dropdownContent = document.getElementById("dropdownContent");
+
+            dropdownButton.addEventListener("click", function() {
+                dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
+            });
+
+            // Close the dropdown when clicking outside of it
+            window.addEventListener("click", function(event) {
+                if (!event.target.matches("#dropdownButton")) {
+                    dropdownContent.style.display = "none";
+                }
+            });
+        });
+   // Refresh every 5 minutes (300000 milliseconds)
+        </script>
+
+
+</html>

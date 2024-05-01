@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Records</title>
+    <!-- Add any CSS links or stylesheets you need -->
+    <link rel="stylesheet" type="text/css" href="/home.css">
+    <style>
+        *{
+
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        h1{
+            background-color: teal;
+            padding: 15px;
+            text-align: center;
+        }
+        table,thead,th,tr,td{
+            border: 2px solid teal;
+            border-collapse: collapse;
+            /* border-radius: 50px; */
+            /* font-size: larger; */
+            margin: 20px;
+            background-color: azure;
+            padding: 10px;
+        }
+        thead,th{
+            font-size: larger;
+        }
+        
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        tbody,tr,td{
+            padding: 10px;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Student Records</h1>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>School Name</th>
+                    <th>Affiliated</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Caste</th>
+                    <th>Admitted In</th>
+                    <th>Dropped Out In</th>
+                    <th>Reason</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% students.forEach((student, index) => { %>
+                    <tr>
+                        <td><%= index + 1 %></td>
+                        <td><%= student.schoolName %></td>
+                        <td><%= student.affiliated %></td>
+                        <td><%= student.name %></td>
+                        <td><%= student.age %></td>
+                        <td><%= student.gender %></td>
+                        <td><%= student.caste %></td>
+                        <td><%= student.admittedIn %></td>
+                        <td><%= student.droppedOutIn %></td>
+                        <td><%= student.reason %></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

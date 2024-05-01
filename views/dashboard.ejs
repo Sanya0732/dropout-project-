@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Gender Distribution</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .card {
+            width: 400px; /* Adjust width as needed */
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px auto; /* Center the card horizontally */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Student Gender Distribution</h1>
+        <canvas id="genderChart" width="400" height="400"></canvas>
+    </div>
+
+    <script>
+        // Function to update the chart
+        function updateChart(data) {
+            var maleCount = 0;
+            var femaleCount = 0;
+            data.forEach(function(student) {
+                if (student.gender.toLowerCase() === 'male') {
+                    maleCount++;
+                } else if (student.gender.toLowerCase() === 'female') {
+                    femaleCount++;
+                }
+            });
+
+            var ctx = document.getElementById('genderChart').getContext('2d');
+            var genderChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Male', 'Female'],
+                    datasets: [{
+                        label: 'Gender Distribution',
+                        data: [maleCount, femaleCount],
+                        backgroundColor: [
+                            'rgba(54, 162, 235, 0.2)', // Blue for Male
+                            'rgba(255, 99, 132, 0.2)' // Red for Female
+                        ],
+                        borderColor: [
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 99, 132, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+        }
+
+        // Fetch data from the "Student Records" page
+        fetch('/studentRecords')
+            .then(response => response.json())
+            .then(data => {
+                updateChart(data);
+            })
+            .catch(error => {
+                console.error('Error fetching student records:', error);
+            });
+    </script>
+</body>
+</html>

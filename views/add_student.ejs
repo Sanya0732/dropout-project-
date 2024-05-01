@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Home Page</title>
+    <link rel="stylesheet" type="text/css" href="/home.css">
+</head>
+<body>
+        
+     <!-- Corrected form closing tag -->
+    <form id="addStudentForm" action="/addstudent" method="post">
+        <div class="container">
+            <div class="container1">
+                <div class="navbar">
+                    <nav>
+                        <ul id="list1">
+                            <li id="list2">
+                                <a href="#home">TEACHER</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+    
+            <h1 id="HEAD">Teacher Portal</h1>
+            <div class="container2">
+                <div class="box1">
+                    <h1>Add Student</h1>
+                    <!-- Removed duplicate form tag -->
+                    <input type="text" name="schoolName" placeholder="School Name" required><br>
+                    <input type="text" name="affiliated" placeholder="Affiliated" required><br>
+                                        <input type="text" name="name" placeholder="Name" required><br>
+                    <input type="number" name="age" placeholder="Age" required><br>
+                    <input type="text" name="gender" placeholder="Gender" required><br>
+                    <input type="text" name="caste" placeholder="Caste" required><br>
+                    <input type="text" name="admittedIn" placeholder="Admitted In" required><br>
+                    <input type="text" name="droppedOutIn" placeholder="Dropped Out In" required><br>
+                    <input type="text" name="reason" placeholder="Reason" required><br>
+                    <button type="submit">Add Student</button>
+                </div>
+                
+            </div>
+        </div>
+</form>
+
+        
+</body>
+</html>

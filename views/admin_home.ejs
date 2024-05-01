@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Home</title>
+    <link rel="stylesheet" href="/home.css">
+</head>
+
+<body>
+    <form action="/home" method="post"> <!-- Added form tag -->
+                           
+        <div class="container">
+            <div class="container1">
+                <div class="navbar">
+                    <nav>
+                        <ul id="list1">
+                            <li id="list2">
+                                <a href="#home">ADMIN</a>
+                            </li>
+                            <div id="menubar">
+                                <img id="dropdownButton" src="https://i.pinimg.com/originals/26/9d/d1/269dd16fa1f5ff51accd09e7e1602267.png" height="30px" width="30px" alt="">
+                                <div id="dropdownContent">
+                                    <!-- Dropdown content goes here -->
+                                    <a href="#">Link 1</a>
+                                    <a href="#">Link 2</a>
+                                    <a href="#">Link 3</a>
+                                </div>
+                            </div>    
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+    
+    
+    
+            <h1 id="HEAD">HOME PAGE</h1>
+            <div class="container2">
+    
+                
+    
+                <div class="box1">
+                    <a href="#addStudent" class="a2">
+                        <img src="https://icon-library.com/images/add-user-icon/add-user-icon-6.jpg" alt="" id="addS">
+                    </a>
+                    <h1>Add Student</h1>
+                </div>
+                <div class="box1">
+                    <a href="#addStudent" class="a2">
+                        <img src="https://th.bing.com/th/id/OIP.yjXl061w9MvrbfBAIf0dIwHaHa?rs=1&pid=ImgDetMain" alt="" id="addS" >
+                    </a>
+                    <h1>Go To Dashboard</h1>
+                </div>
+                <div class="box1">
+                    <a href="#addStudent" class="a2">
+                        <img src="https://static.vecteezy.com/system/resources/previews/019/940/451/original/an-editable-design-icon-of-database-update-vector.jpg" alt="" id="addS">
+                    </a>
+                    <h1>Update Data</h1>
+                </div>
+            </div>
+        </div>
+    </form> <!-- Closed form tag -->
+</body>
+<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var dropdownButton = document.getElementById("dropdownButton");
+            var dropdownContent = document.getElementById("dropdownContent");
+
+            dropdownButton.addEventListener("click", function() {
+                dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
+            });
+
+            // Close the dropdown when clicking outside of it
+            window.addEventListener("click", function(event) {
+                if (!event.target.matches("#dropdownButton")) {
+                    dropdownContent.style.display = "none";
+                }
+            });
+        });
+        </script>
+
+
+</html>
